@@ -1,0 +1,226 @@
+/* Moderne Werkstoffe – gemeinsame Gestaltung */
+:root {
+  --akzent: #2a5d9f;
+  --akzent-dunkel: #1d4475;
+  --akzent-hell: #e5eef9;
+  --text: #1c2430;
+  --grau: #5a6573;
+  --hintergrund: #f6f8fb;
+  --karte: #ffffff;
+  --rand: #d9e0ea;
+  --basis: #2f7d4f;      --basis-hell: #e6f2ea;
+  --vertiefung: #b26b00; --vertiefung-hell: #fdf1de;
+  --challenge: #8a2f8f;  --challenge-hell: #f6e7f7;
+  --plenum: #c2410c;     --plenum-hell: #fdece4;
+  --heft: #374151;
+  --richtig: #2f7d4f; --falsch: #b42318;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--hintergrund);
+  line-height: 1.55;
+  font-size: 17px;
+}
+
+a { color: var(--akzent); }
+img, svg { max-width: 100%; height: auto; }
+
+/* Kopf */
+.kopf {
+  background: linear-gradient(135deg, var(--akzent-dunkel), var(--akzent));
+  color: #fff;
+  padding: 1.6rem 1.25rem 1.8rem;
+}
+.kopf .inhalt { max-width: 920px; margin: 0 auto; }
+.kopf .reihe { font-size: .9rem; opacity: .85; margin: 0 0 .3rem; }
+.kopf .reihe a { color: #fff; }
+.kopf h1 { margin: 0 0 .4rem; font-size: 1.9rem; line-height: 1.2; }
+.kopf .leitfrage { margin: 0; font-size: 1.05rem; opacity: .95; font-style: italic; }
+
+/* Navigation */
+.nav {
+  background: #fff;
+  border-bottom: 1px solid var(--rand);
+  position: sticky; top: 0; z-index: 10;
+  overflow-x: auto; white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+.nav ul { list-style: none; margin: 0 auto; padding: .45rem 1rem; max-width: 920px; display: flex; gap: .35rem; }
+.nav a {
+  display: inline-block; text-decoration: none; color: var(--text);
+  padding: .35rem .7rem; border-radius: 999px; font-size: .9rem;
+  border: 1px solid transparent;
+}
+.nav a:hover { border-color: var(--rand); }
+.nav a[aria-current="page"] { background: var(--akzent); color: #fff; }
+
+main { max-width: 920px; margin: 0 auto; padding: 1.2rem 1.25rem 3rem; }
+
+h2 { font-size: 1.35rem; margin: 2.2rem 0 .8rem; color: var(--akzent-dunkel); }
+h3 { font-size: 1.1rem; margin: 1.4rem 0 .5rem; }
+
+/* Karten / Boxen */
+.box {
+  background: var(--karte); border: 1px solid var(--rand); border-radius: var(--radius);
+  padding: 1.1rem 1.25rem; margin: 1rem 0;
+}
+.box > :first-child { margin-top: 0; }
+.box > :last-child { margin-bottom: 0; }
+
+.intro { border-left: 5px solid var(--akzent); }
+.lernziele { background: var(--akzent-hell); border-color: transparent; }
+.lernziele h2, .lernziele h3 { margin-top: 0; }
+
+.auftrag { position: relative; }
+.auftrag .label {
+  display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .02em;
+  text-transform: uppercase; padding: .15rem .6rem; border-radius: 999px; margin-bottom: .4rem;
+}
+.auftrag h3 { margin-top: .2rem; }
+.basis { border-top: 5px solid var(--basis); }
+.basis .label { background: var(--basis-hell); color: var(--basis); }
+.vertiefung { border-top: 5px solid var(--vertiefung); }
+.vertiefung .label { background: var(--vertiefung-hell); color: var(--vertiefung); }
+.challenge { border-top: 5px solid var(--challenge); }
+.challenge .label { background: var(--challenge-hell); color: var(--challenge); }
+.plenum { border: 2px solid var(--plenum); background: var(--plenum-hell); }
+.plenum .label { background: var(--plenum); color: #fff; }
+.versuch { border: 2px dashed var(--akzent); }
+.versuch .label { background: var(--akzent); color: #fff; }
+
+.heft {
+  display: flex; gap: .6rem; align-items: flex-start;
+  background: #f3f4f6; border-radius: 10px; padding: .6rem .8rem; margin: .8rem 0 0;
+  font-size: .95rem; color: var(--heft);
+}
+.heft::before { content: "✏️"; }
+
+.hinweis { font-size: .92rem; color: var(--grau); }
+.sicherheit {
+  background: #fff5f5; border: 1px solid #f3c2c2; border-radius: 10px;
+  padding: .6rem .8rem; font-size: .95rem; margin: .8rem 0;
+}
+.sicherheit::before { content: "⚠️ "; }
+
+.rollen { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: .6rem; }
+.rollen div { background: var(--akzent-hell); border-radius: 10px; padding: .6rem .8rem; font-size: .95rem; }
+
+/* Aufklapp-Hilfen und Lösungen */
+details {
+  border: 1px solid var(--rand); border-radius: 10px; margin: .5rem 0; background: #fbfcfe;
+}
+details > summary {
+  cursor: pointer; padding: .55rem .8rem; font-weight: 600; list-style: none;
+}
+details > summary::-webkit-details-marker { display: none; }
+details > summary::before { content: "▸ "; color: var(--grau); }
+details[open] > summary::before { content: "▾ "; }
+details > div { padding: .2rem .9rem .8rem; }
+details.hilfe > summary { color: var(--vertiefung); }
+details.loesung > summary { color: var(--basis); }
+details.loesung { border-color: #b9dcc6; }
+.hilfen-titel { font-size: .9rem; color: var(--grau); margin: .8rem 0 .2rem; }
+
+/* Links zu Quellen */
+.quellen { list-style: none; padding: 0; margin: .5rem 0; }
+.quellen li { margin: .4rem 0; padding-left: 1.6rem; position: relative; }
+.quellen li::before { position: absolute; left: 0; }
+.quellen li.text::before { content: "📄"; }
+.quellen li.video::before { content: "🎬"; }
+.quellen li.tool::before { content: "🧪"; }
+.quellen .quelle { color: var(--grau); font-size: .88rem; }
+
+/* Tabellen */
+.tabelle-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; margin: .6rem 0; font-size: .95rem; background: #fff; }
+th, td { border: 1px solid var(--rand); padding: .45rem .6rem; text-align: left; vertical-align: top; }
+th { background: var(--akzent-hell); }
+
+/* Selbsttest */
+.quiz .frage { margin: 1rem 0; }
+.quiz .frage p { font-weight: 600; margin: 0 0 .4rem; }
+.quiz button.option {
+  display: block; width: 100%; text-align: left; font: inherit; font-size: .97rem;
+  background: #fff; border: 1px solid var(--rand); border-radius: 10px;
+  padding: .55rem .8rem; margin: .3rem 0; cursor: pointer; color: var(--text);
+}
+.quiz button.option:hover { border-color: var(--akzent); }
+.quiz button.option.richtig { border-color: var(--richtig); background: #eaf6ee; }
+.quiz button.option.falsch { border-color: var(--falsch); background: #fdeceb; }
+.quiz .feedback { font-size: .93rem; margin: .3rem 0 0; min-height: 1.2em; }
+.quiz .stand { font-weight: 700; color: var(--akzent-dunkel); }
+
+/* Ich-kann-Liste */
+.ichkann label { display: flex; gap: .6rem; align-items: flex-start; padding: .35rem 0; cursor: pointer; }
+.ichkann input { width: 1.2rem; height: 1.2rem; margin-top: .2rem; flex-shrink: 0; }
+
+/* Zuordnungsspiel */
+.zuordnen .karten { display: flex; flex-wrap: wrap; gap: .45rem; margin: .6rem 0; }
+.zuordnen .karte {
+  font: inherit; font-size: .93rem; padding: .45rem .75rem; border-radius: 999px;
+  border: 1px solid var(--rand); background: #fff; cursor: pointer; color: var(--text);
+}
+.zuordnen .karte.aktiv { border-color: var(--akzent); box-shadow: 0 0 0 2px var(--akzent-hell); }
+.zuordnen .karte.fertig { opacity: .45; cursor: default; }
+.zuordnen .koerbe { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: .6rem; }
+.zuordnen .korb {
+  font: inherit; text-align: left; border: 2px dashed var(--rand); border-radius: 12px;
+  padding: .6rem; min-height: 90px; background: #fbfcfe; cursor: pointer; color: var(--text);
+}
+.zuordnen .korb strong { display: block; margin-bottom: .3rem; }
+.zuordnen .korb span { display: inline-block; font-size: .85rem; background: var(--akzent-hell); border-radius: 999px; padding: .1rem .5rem; margin: .15rem; }
+.zuordnen .meldung { min-height: 1.3em; font-size: .95rem; }
+
+/* Grafiken */
+figure { margin: 1rem 0; text-align: center; }
+figcaption { font-size: .88rem; color: var(--grau); margin-top: .3rem; }
+.formel { font-family: "SF Mono", Menlo, Consolas, monospace; background: #f3f5f8; padding: .1rem .35rem; border-radius: 5px; font-size: .92em; }
+.formelblock { font-family: "SF Mono", Menlo, Consolas, monospace; background: #f3f5f8; padding: .7rem .9rem; border-radius: 10px; overflow-x: auto; white-space: pre; font-size: .9rem; line-height: 1.4; }
+
+/* Weiter-Navigation */
+.weiter { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; }
+.weiter a {
+  text-decoration: none; background: var(--akzent); color: #fff; padding: .65rem 1rem; border-radius: 10px;
+}
+.weiter a.zurueck { background: #fff; color: var(--akzent); border: 1px solid var(--akzent); }
+
+/* Übersicht der Reihe */
+.themen { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+.thema {
+  display: block; background: #fff; border: 1px solid var(--rand); border-radius: var(--radius);
+  padding: 1rem 1.1rem; text-decoration: none; color: inherit;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.thema:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); border-color: var(--akzent); }
+.thema .nr { font-size: .8rem; font-weight: 700; color: var(--akzent); }
+.thema h3 { margin: .2rem 0 .3rem; }
+.thema p { margin: 0; color: var(--grau); font-size: .95rem; }
+
+.legende { display: flex; flex-wrap: wrap; gap: .5rem; font-size: .88rem; }
+.legende span { padding: .15rem .6rem; border-radius: 999px; }
+
+footer {
+  max-width: 920px; margin: 0 auto; padding: 1.5rem 1.25rem 2.5rem;
+  color: var(--grau); font-size: .85rem; border-top: 1px solid var(--rand);
+}
+footer a { color: var(--grau); }
+
+/* Lehrerversion */
+.lk-hinweis { background: #fffbea; border: 1px solid #f0d97a; }
+.platzhalter {
+  background: repeating-linear-gradient(45deg, #fafafa, #fafafa 10px, #f1f1f1 10px, #f1f1f1 20px);
+  border: 2px dashed #b8b8b8; border-radius: 10px; padding: .7rem .9rem; color: #555;
+}
+
+@media print {
+  .nav, .weiter, .quiz button { display: none; }
+  details { border: none; }
+  details > div { display: block; }
+  body { background: #fff; }
+}

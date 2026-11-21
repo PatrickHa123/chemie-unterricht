@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>6 Recycling | Moderne Werkstoffe</title>
+  <link rel="stylesheet" href="werkstoffe.css">
+  <style>
+    .sim { background: #fbfcfe; border: 1px solid var(--rand); border-radius: 14px; padding: 1rem; }
+    .sim .regler { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; margin: .4rem 0 .8rem; }
+    .sim input[type=range] { flex: 1; min-width: 200px; accent-color: var(--akzent); }
+    .sim .wert { font-weight: 700; min-width: 7.5rem; }
+    .sim .vorgaben button { font: inherit; font-size: .88rem; padding: .3rem .7rem; border-radius: 999px; border: 1px solid var(--akzent); background: #fff; color: var(--akzent); cursor: pointer; margin: .15rem; }
+    .becken { position: relative; height: 230px; border: 3px solid #8aa4c8; border-top: none; border-radius: 0 0 16px 16px; background: linear-gradient(#d8e8fb, #b7d1f2); margin-top: .8rem; overflow: hidden; }
+    .becken .flocke { position: absolute; width: 14%; padding: .25rem 0; text-align: center; font-size: .82rem; font-weight: 700; border-radius: 8px; color: #fff; transition: top .8s ease; box-shadow: 0 2px 4px rgba(0,0,0,.15); }
+  </style>
+</head>
+<body data-seite="6-recycling.html">
+  <header class="kopf">
+    <div class="inhalt">
+      <p class="reihe"><a href="index.html">Moderne Werkstoffe</a> · Thema 6</p>
+      <h1>Recycling</h1>
+      <p class="leitfrage">Was passiert mit dem Inhalt des gelben Sacks – und wie kann es besser werden?</p>
+    </div>
+  </header>
+  <nav class="nav" aria-label="Seiten der Reihe"></nav>
+
+  <main>
+    <div class="box lernziele">
+      <h3>Darum geht es</h3>
+      <p>Ihr plant, wie man Verpackungsabfälle nach ihren Eigenschaften trennen kann, vergleicht die Wege der Kunststoffverwertung und bewertet Verpackungen danach, wie gut sie sich recyceln lassen. Am Ende leitet ihr Handlungsoptionen für euren Alltag ab.</p>
+    </div>
+
+    <div class="box auftrag basis">
+      <span class="label">Basis</span>
+      <h3>A1 · Ihr seid die Sortieranlage</h3>
+      <p>Für ein gutes werkstoffliches Recycling müssen Kunststoffe <strong>sortenrein</strong> vorliegen. Eine wichtige Methode ist das <strong>Schwimm-Sink-Verfahren</strong>: Zerkleinerte Kunststoffe (Flakes) werden in eine Flüssigkeit gegeben – was eine geringere Dichte hat als die Flüssigkeit, schwimmt.</p>
+      <p>Erinnert euch an das Rätsel der Pfandflasche aus Thema 0! Testet mit dem Simulator, bei welcher Flüssigkeitsdichte welche Kunststoffe schwimmen.</p>
+      <div class="sim" id="simulator">
+        <div class="regler">
+          <label for="dichte">Dichte der Flüssigkeit:</label>
+          <input type="range" id="dichte" min="0.85" max="1.45" step="0.01" value="1.00">
+          <span class="wert" id="dichtewert">1,00 g/cm³</span>
+        </div>
+        <div class="vorgaben">
+          <button type="button" data-d="0.93">Alkohol-Wasser-Gemisch (≈ 0,93)</button>
+          <button type="button" data-d="1.00">Wasser (1,00)</button>
+          <button type="button" data-d="1.20">gesättigte Kochsalzlösung (≈ 1,20)</button>
+        </div>
+        <div class="becken" id="becken"></div>
+        <p class="hinweis" style="margin-bottom:0">Typische Dichten (können je nach Sorte und Zusätzen etwas abweichen): PP 0,90 · PE-LD 0,92 · PE-HD 0,95 · PS 1,05 · PET 1,38 · PVC 1,38 g/cm³</p>
+      </div>
+      <ol style="margin-top:1rem">
+        <li>Ein Gemisch aus PP-, PE-HD-, PS- und PET-Flakes soll vollständig getrennt werden. Plant eine Abfolge von Trennschritten mit möglichst wenigen Flüssigkeiten.</li>
+        <li>PET und PVC lassen sich so nicht trennen. Warum ist das ein Problem? (Tipp: Was passiert, wenn PVC beim Einschmelzen von PET erhitzt wird?)</li>
+        <li>Recherchiert, welche weiteren Sortierverfahren in modernen Anlagen eingesetzt werden.</li>
+      </ol>
+      <p class="heft">Trennschema als Fließdiagramm + Antworten zu 2. und 3.</p>
+      <details class="hilfe"><summary>Hilfe zu 1.</summary><div>
+        <p>Beginnt mit Wasser. Welche Gruppen entstehen? Mit welcher Flüssigkeit trennt ihr dann die schwimmende Gruppe weiter, mit welcher die sinkende?</p>
+      </div></details>
+      <details class="loesung"><summary>Lösung zum Vergleichen</summary><div>
+        <ol>
+          <li>Wasser (1,00): PP und PE-HD schwimmen, PS und PET sinken. Schwimmende Fraktion in Alkohol-Wasser-Gemisch (≈ 0,93): PP schwimmt, PE-HD sinkt. Sinkende Fraktion in gesättigter Kochsalzlösung (≈ 1,20): PS schwimmt, PET sinkt.</li>
+          <li>Schon geringe PVC-Mengen verunreinigen das PET-Rezyklat. Beim Erhitzen kann PVC Chlorwasserstoff abspalten, das schädigt das Material und die Anlagen.</li>
+          <li>z. B. Nahinfrarot-Spektroskopie (NIR): Die Kunststoffe werden auf dem Band an ihrem Infrarot-Spektrum erkannt und per Druckluftdüse aussortiert. Außerdem Windsichtung (leichte Folien), Magnet- und Wirbelstromabscheider (Metalle).</li>
+        </ol>
+      </div></details>
+    </div>
+
+    <div class="box auftrag versuch">
+      <span class="label">Experiment · selbst geplant</span>
+      <h3>A2 · Wir trennen echten Verpackungsmüll</h3>
+      <p>Plant in eurer Gruppe ein Experiment, mit dem ihr ein Gemisch aus zerkleinerten Verpackungsabfällen (eure Verpackungen aus Thema 0) sortenrein trennt.</p>
+      <ul>
+        <li>Formuliert eine Fragestellung und eine Hypothese.</li>
+        <li>Erstellt eine Materialliste und eine Schritt-für-Schritt-Durchführung.</li>
+        <li>Überlegt, wie ihr kontrolliert, ob die Trennung funktioniert hat.</li>
+      </ul>
+      <p>Legt eure Planung der Lehrkraft vor. Nach der Freigabe führt ihr das Experiment durch.</p>
+      <p class="sicherheit">Schutzbrille tragen. Brennbare Flüssigkeiten (z. B. Alkohol) von Zündquellen fernhalten. Schneidwerkzeuge vorsichtig benutzen.</p>
+      <p class="heft">Versuchsprotokoll: Fragestellung, Hypothese, Material, Durchführung, Beobachtung, Auswertung, Fehlerbetrachtung.</p>
+      <details class="hilfe"><summary>Hilfe: Woran kann es scheitern?</summary><div>
+        <p>Luftbläschen an den Flakes, Etiketten- oder Kleberreste, geschäumte Kunststoffe und Füllstoffe verändern die scheinbare Dichte. Wie könnt ihr das vermeiden? (Tipp: ein Tropfen Spülmittel.)</p>
+      </div></details>
+    </div>
+
+    <div class="box auftrag basis">
+      <span class="label">Basis</span>
+      <h3>A3 · Drei Wege der Verwertung</h3>
+      <p>Man unterscheidet <strong>werkstoffliche</strong>, <strong>rohstoffliche</strong> und <strong>energetische</strong> Verwertung. Erarbeitet die drei Wege und legt eine Vergleichstabelle an: Prinzip · Beispiel · Vorteile · Nachteile · Was passiert mit den Makromolekülen?</p>
+      <ul class="quellen">
+        <li class="text"><a href="https://www.chemieunterricht.de/dc2/auto/rec-kust.htm" target="_blank" rel="noopener">Wie Kunststoffe recycelt werden können</a> <span class="quelle">· Prof. Blumes Bildungsserver</span></li>
+        <li class="text"><a href="https://www.seilnacht.com/Lexikon/k_umwelt.html" target="_blank" rel="noopener">Kunststoffe und Umwelt</a> <span class="quelle">· seilnacht.com</span></li>
+      </ul>
+      <p class="heft">Vergleichstabelle + Antwort auf die Frage: Warum lassen sich Thermoplaste werkstofflich verwerten, Duroplaste aber nicht? (Thema 1!)</p>
+      <details class="loesung"><summary>Lösung zum Vergleichen</summary><div>
+        <div class="tabelle-wrap"><table>
+          <tr><th></th><th>werkstofflich</th><th>rohstofflich</th><th>energetisch</th></tr>
+          <tr><td>Prinzip</td><td>sortenrein sammeln, reinigen, einschmelzen, neu formen</td><td>Makromoleküle in kleine Moleküle zerlegen (z. B. Pyrolyse, Hydrolyse)</td><td>Verbrennen, Nutzung der Wärme</td></tr>
+          <tr><td>Makromoleküle</td><td>bleiben weitgehend erhalten</td><td>werden gespalten</td><td>werden zu CO₂ und H₂O oxidiert</td></tr>
+          <tr><td>Vorteil</td><td>geringster Energieaufwand, Material bleibt im Kreislauf</td><td>auch für gemischte/verschmutzte Kunststoffe; neue Rohstoffe für die Synthese</td><td>keine Sortierung nötig; Energiegewinnung</td></tr>
+          <tr><td>Nachteil</td><td>braucht sortenreine, saubere Abfälle; Qualität sinkt oft</td><td>hoher Energieaufwand, aufwendige Anlagen</td><td>Rohstoff geht verloren, CO₂-Emission, Abgasreinigung nötig</td></tr>
+        </table></div>
+        <p>Thermoplaste bestehen aus nicht vernetzten Ketten und lassen sich daher einschmelzen und neu formen. Duroplaste sind engmaschig vernetzt, sie zersetzen sich, statt zu schmelzen.</p>
+      </div></details>
+    </div>
+
+    <div class="box auftrag vertiefung">
+      <span class="label">Vertiefung · Kreativ</span>
+      <h3>A4 · Der Recycling-Check: Redesign gesucht!</h3>
+      <p>Nehmt euch zwei eurer Verpackungen aus Thema 0 vor und bewertet, wie gut sie sich recyceln lassen. Mögliche Kriterien:</p>
+      <ul>
+        <li>Monomaterial oder Verbund aus mehreren Schichten bzw. Kunststoffen?</li>
+        <li>Lassen sich Deckel, Etikett und Behälter trennen? Haben sie unterschiedliche Dichten?</li>
+        <li>Ist die Verpackung schwarz eingefärbt? (Recherchiert, warum das für die NIR-Sortierung ein Problem ist.)</li>
+        <li>Wie stark ist sie verschmutzt, wenn sie in den Müll kommt?</li>
+      </ul>
+      <p>Entwerft für die schlechter abschneidende Verpackung ein <strong>Redesign</strong>, das ihre Funktion erhält, aber besser recycelbar ist. Skizziert es auf dem iPad.</p>
+      <p class="heft">Bewertungstabelle für beide Verpackungen + Skizze und Begründung eures Redesigns.</p>
+    </div>
+
+    <div class="box auftrag vertiefung">
+      <span class="label">Vertiefung · Bewertung</span>
+      <h3>A5 · Und was mache ich?</h3>
+      <p>Vergleicht Produkte aus unterschiedlichen Materialien für <strong>denselben Zweck</strong>, z. B. Getränkeverpackungen: PET-Einwegflasche, PET-Mehrwegflasche, Glas-Mehrwegflasche, Getränkekarton (Verbund).</p>
+      <ol>
+        <li>Legt Bewertungskriterien fest (z. B. Rohstoffverbrauch, Transportgewicht, Recyclingfähigkeit, Bruchsicherheit, Wiederverwendbarkeit).</li>
+        <li>Bewertet die Produkte und begründet mit eurem Chemiewissen.</li>
+        <li>Leitet <strong>drei konkrete Handlungsoptionen</strong> für euren Alltag ab.</li>
+      </ol>
+      <p class="heft">Bewertungsmatrix + drei Handlungsoptionen mit Begründung.</p>
+      <ul class="quellen">
+        <li class="video"><a href="https://www.planet-wissen.de/technik/werkstoffe/kunststoff/kunststoff-videos-100.html" target="_blank" rel="noopener">Kunststoff-Videos, z. B. „Plastik in den Weltmeeren“</a> <span class="quelle">· Planet Wissen</span></li>
+      </ul>
+    </div>
+
+    <div class="box auftrag challenge">
+      <span class="label">Challenge</span>
+      <h3>A6 · Zurück zum Monomer: PET chemisch recyceln</h3>
+      <p>PET kann man nicht nur einschmelzen, sondern auch chemisch wieder in seine Bausteine zerlegen. Forschende haben sogar Bakterien und Enzyme entdeckt, die PET abbauen können.</p>
+      <ol>
+        <li>Formuliert mit eurem Wissen aus Thema 3 eine Reaktionsgleichung für die vollständige Spaltung von PET in seine Monomere.</li>
+        <li>Recherchiert zu PET-abbauenden Enzymen. Welchen Vorteil hätte ein enzymatisches Recycling gegenüber dem Einschmelzen?</li>
+      </ol>
+      <details class="loesung"><summary>Lösung zu 1.</summary><div>
+        <div class="formelblock">[–CO–C6H4–CO–O–CH2–CH2–O–]n + 2n H2O  ──►  n HOOC–C6H4–COOH + n HO–CH2–CH2–OH</div>
+        <p>Das ist die Hydrolyse der Estergruppen – die Umkehrung der Polykondensation. Aus den gewonnenen Monomeren lässt sich neues PET in Neuware-Qualität herstellen, während beim Einschmelzen die Ketten mit jedem Durchgang etwas kürzer werden und die Qualität sinkt.</p>
+      </div></details>
+    </div>
+
+    <div class="box auftrag basis">
+      <span class="label">Basis · Selbsttest</span>
+      <h3>A7 · Checkt euer Wissen</h3>
+      <div class="quiz">
+        <div class="frage" data-richtig="b">
+          <p>1. Ein Flake schwimmt in Wasser, sinkt aber im Alkohol-Wasser-Gemisch mit der Dichte 0,93 g/cm³. Um welchen Kunststoff handelt es sich wahrscheinlich?</p>
+          <button class="option" data-o="a">PP</button>
+          <button class="option" data-o="b" data-fb="PE-HD: Dichte etwa 0,95 g/cm³ – zwischen 0,93 und 1,00.">PE-HD</button>
+          <button class="option" data-o="c">PS</button>
+          <button class="option" data-o="d">PET</button>
+          <p class="feedback"></p>
+        </div>
+        <div class="frage" data-richtig="c">
+          <p>2. Bei welcher Verwertung bleiben die Makromoleküle weitgehend erhalten?</p>
+          <button class="option" data-o="a">energetische Verwertung</button>
+          <button class="option" data-o="b">rohstoffliche Verwertung</button>
+          <button class="option" data-o="c" data-fb="Richtig: Einschmelzen und neu formen – die Ketten bleiben (weitgehend) erhalten.">werkstoffliche Verwertung</button>
+          <p class="feedback"></p>
+        </div>
+        <div class="frage" data-richtig="a">
+          <p>3. Warum kann man ein Steckdosengehäuse nicht einschmelzen und neu formen?</p>
+          <button class="option" data-o="a" data-fb="Duroplast: engmaschig vernetzt, er zersetzt sich statt zu schmelzen.">Es ist ein Duroplast mit engmaschig vernetzten Ketten.</button>
+          <button class="option" data-o="b">Es enthält zu viel Chlor.</button>
+          <button class="option" data-o="c">Seine Dichte ist zu hoch.</button>
+          <p class="feedback"></p>
+        </div>
+        <div class="frage" data-richtig="b">
+          <p>4. Was ist ein Nachteil von Verbundverpackungen aus mehreren Kunststoffschichten?</p>
+          <button class="option" data-o="a">Sie sind zu schwer.</button>
+          <button class="option" data-o="b" data-fb="Fest verbundene Schichten lassen sich kaum trennen – kein sortenreines Material.">Die Schichten lassen sich kaum trennen, deshalb ist sortenreines Recycling schwierig.</button>
+          <button class="option" data-o="c">Sie lassen sich nicht verbrennen.</button>
+          <p class="feedback"></p>
+        </div>
+        <p class="stand"></p>
+      </div>
+    </div>
+
+    <div class="box plenum">
+      <span class="label">Plenum</span>
+      <h3>Recycling-Konferenz</h3>
+      <ul>
+        <li>Die Gruppen stellen ihre Trennexperimente vor: Was hat funktioniert, was nicht – und warum? (Fehlerbetrachtung!)</li>
+        <li>Redesign-Galerie: Jede Gruppe präsentiert ihr Verpackungs-Redesign in einer Minute. Die anderen geben Feedback: Ist es chemisch durchdacht? Erfüllt es noch seine Funktion?</li>
+        <li>Wir sammeln die Handlungsoptionen aus A5 und einigen uns auf eine Top-5-Liste des Kurses.</li>
+      </ul>
+    </div>
+
+    <div class="box ichkann">
+      <h3 style="margin-top:0">Ich kann …</h3>
+      <label><input type="checkbox" data-k="1"> ein Experiment zur Trennung von Kunststoffen anhand ihrer Dichte planen, durchführen und auswerten.</label>
+      <label><input type="checkbox" data-k="2"> werkstoffliche, rohstoffliche und energetische Verwertung vergleichen.</label>
+      <label><input type="checkbox" data-k="3"> begründen, warum sich Thermoplaste, aber nicht Duroplaste einschmelzen lassen.</label>
+      <label><input type="checkbox" data-k="4"> Produkte nach Kriterien bewerten und Handlungsoptionen für den Alltag ableiten.</label>
+    </div>
+
+    <div class="weiter"></div>
+  </main>
+
+  <footer>Unterrichtsmaterial Chemie Q2 · Patrick Hafner · <a href="../../impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></footer>
+  <script src="werkstoffe.js"></script>
+  <script>
+    (function () {
+      var STOFFE = [
+        { n: "PP", d: 0.90, f: "#2f7d4f" },
+        { n: "PE-LD", d: 0.92, f: "#5a8f2f" },
+        { n: "PE-HD", d: 0.95, f: "#2a5d9f" },
+        { n: "PS", d: 1.05, f: "#b26b00" },
+        { n: "PET", d: 1.38, f: "#8a2f8f" },
+        { n: "PVC", d: 1.38, f: "#b42318" }
+      ];
+      var becken = document.getElementById("becken");
+      var regler = document.getElementById("dichte");
+      var anzeige = document.getElementById("dichtewert");
+      var flocken = STOFFE.map(function (s, i) {
+        var el = document.createElement("div");
+        el.className = "flocke"; el.textContent = s.n; el.style.background = s.f;
+        el.style.left = (4 + i * 16) + "%";
+        becken.appendChild(el);
+        return el;
+      });
+      function aktualisieren() {
+        var d = Number(regler.value);
+        anzeige.textContent = d.toFixed(2).replace(".", ",") + " g/cm³";
+        var h = becken.clientHeight;
+        STOFFE.forEach(function (s, i) {
+          flocken[i].style.top = (s.d < d ? 8 : h - 36) + "px";
+        });
+      }
+      regler.addEventListener("input", aktualisieren);
+      document.querySelectorAll("#simulator .vorgaben button").forEach(function (b) {
+        b.addEventListener("click", function () { regler.value = b.getAttribute("data-d"); aktualisieren(); });
+      });
+      window.addEventListener("resize", aktualisieren);
+      aktualisieren();
+    })();
+  </script>
+</body>
+</html>

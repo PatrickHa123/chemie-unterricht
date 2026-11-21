@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>5 Erdöl oder Acker? | Moderne Werkstoffe</title>
+  <link rel="stylesheet" href="werkstoffe.css">
+  <style>
+    .matrix { display: grid; grid-template-columns: auto 1fr 1fr; gap: 2px; background: var(--rand); border-radius: 10px; overflow: hidden; margin: .8rem 0; font-size: .95rem; }
+    .matrix div { background: #fff; padding: .6rem .7rem; min-height: 3.2rem; }
+    .matrix .kopfzelle { background: var(--akzent-hell); font-weight: 700; }
+    .rollen-karten { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: .6rem; }
+    .rollen-karten div { background: #fff; border: 1px solid var(--rand); border-radius: 12px; padding: .7rem .8rem; font-size: .95rem; }
+  </style>
+</head>
+<body data-seite="5-rohstoffe.html">
+  <header class="kopf">
+    <div class="inhalt">
+      <p class="reihe"><a href="index.html">Moderne Werkstoffe</a> · Thema 5</p>
+      <h1>Erdöl oder Acker?</h1>
+      <p class="leitfrage">Woraus sollen unsere Kunststoffe in Zukunft hergestellt werden?</p>
+    </div>
+  </header>
+  <nav class="nav" aria-label="Seiten der Reihe"></nav>
+
+  <main>
+    <div class="box lernziele">
+      <h3>Darum geht es</h3>
+      <p>Ihr verfolgt den Weg vom Erdöl zum Kunststoff, unterscheidet „biobasiert“ und „biologisch abbaubar“ und bewertet den Einsatz von Erdöl und nachwachsenden Rohstoffen aus ökologischer, ökonomischer und sozialer Perspektive.</p>
+    </div>
+
+    <div class="box auftrag basis">
+      <span class="label">Basis · Einstieg</span>
+      <h3>Fake oder Fakt?</h3>
+      <p>Auf Verpackungen und in der Werbung liest man viel über „Bio-Plastik“. Was stimmt? Entscheidet zuerst aus dem Bauch – am Ende des Themas prüft ihr eure Antworten noch einmal.</p>
+      <div class="quiz">
+        <div class="frage" data-richtig="b">
+          <p>1. „Diese Tüte ist aus Pflanzen hergestellt – sie zersetzt sich also in der Natur.“</p>
+          <button class="option" data-o="a">Fakt</button>
+          <button class="option" data-o="b" data-fb="Biobasiert heißt nur: aus nachwachsenden Rohstoffen. Bio-PE aus Zuckerrohr ist z. B. genauso beständig wie normales PE.">Fake</button>
+          <p class="feedback"></p>
+        </div>
+        <div class="frage" data-richtig="a">
+          <p>2. „Es gibt Kunststoffe aus Erdöl, die biologisch abbaubar sind.“</p>
+          <button class="option" data-o="a" data-fb="Ob ein Kunststoff abbaubar ist, hängt von seiner Struktur ab, nicht vom Rohstoff. Es gibt abbaubare Polyester auf Erdölbasis.">Fakt</button>
+          <button class="option" data-o="b">Fake</button>
+          <p class="feedback"></p>
+        </div>
+        <div class="frage" data-richtig="b">
+          <p>3. „Biologisch abbaubare Kunststoffe kann man auf den Gartenkompost werfen.“</p>
+          <button class="option" data-o="a">Fakt</button>
+          <button class="option" data-o="b" data-fb="Viele zersetzen sich nur unter den Bedingungen industrieller Kompostieranlagen. Im Gartenkompost wird es dafür nicht heiß genug.">Fake</button>
+          <p class="feedback"></p>
+        </div>
+        <div class="frage" data-richtig="a">
+          <p>4. „Bio-PE aus Zuckerrohr und PE aus Erdöl bestehen aus den gleichen Molekülen.“</p>
+          <button class="option" data-o="a" data-fb="Beide werden aus Ethen hergestellt – nur die Herkunft des Ethens unterscheidet sich.">Fakt</button>
+          <button class="option" data-o="b">Fake</button>
+          <p class="feedback"></p>
+        </div>
+        <p class="stand"></p>
+      </div>
+    </div>
+
+    <div class="box auftrag basis">
+      <span class="label">Basis</span>
+      <h3>A1 · Vom Bohrloch zum Joghurtbecher</h3>
+      <p>Die meisten Kunststoffe werden heute aus Erdöl hergestellt. Recherchiert den Weg und erstellt ein <strong>Fließschema</strong>: Erdöl → fraktionierte Destillation → Rohbenzin (Naphtha) → Cracken → Ethen/Propen → Polymerisation → Kunststoff.</p>
+      <ol>
+        <li>Erklärt kurz, auf welcher Stoffeigenschaft die fraktionierte Destillation beruht.</li>
+        <li>Erklärt, was beim Cracken passiert und warum es nötig ist.</li>
+        <li>Recherchiert: Welcher Anteil des Erdöls wird ungefähr für Kunststoffe verwendet – und wofür wird der Großteil genutzt? Notiert die Quelle.</li>
+      </ol>
+      <p class="heft">Fließschema mit kurzen Erklärungen an jedem Pfeil + Rechercheergebnis mit Quelle.</p>
+      <ul class="quellen">
+        <li class="text"><a href="https://www.leifichemie.de/erdoel-und-organische-stoffklassen/fossile-energietraeger/grundwissen/erdoelaufbereitung" target="_blank" rel="noopener">Erdölaufbereitung: fraktionierte Destillation und Cracken</a> <span class="quelle">· LEIFIchemie</span></li>
+        <li class="text"><a href="https://www.leifichemie.de/erdoel-und-organische-stoffklassen/alkene-und-alkine/grundwissen/ethen-und-propen-als-wichtige-grundchemikalien" target="_blank" rel="noopener">Ethen und Propen als wichtige Grundchemikalien</a> <span class="quelle">· LEIFIchemie</span></li>
+      </ul>
+      <details class="loesung"><summary>Lösung zu 1. und 2.</summary><div>
+        <p>1. Erdöl ist ein Gemisch vieler Kohlenwasserstoffe mit unterschiedlichen Siedetemperaturen. In der Destillationskolonne werden sie in Fraktionen mit ähnlichen Siedebereichen getrennt. Die Siedetemperatur hängt von der Kettenlänge ab (Van-der-Waals-Kräfte!).</p>
+        <p>2. Beim Cracken werden langkettige Kohlenwasserstoffe durch Hitze (und Katalysatoren) in kürzere Moleküle gespalten. Dabei entstehen auch Alkene wie Ethen und Propen – die Monomere für PE und PP. Nötig ist das, weil das Erdöl mehr langkettige Bestandteile enthält, als gebraucht werden, und weil die wichtigen Alkene im Erdöl kaum vorkommen.</p>
+      </div></details>
+    </div>
+
+    <div class="box auftrag basis">
+      <span class="label">Basis</span>
+      <h3>A2 · „Bio“ ist nicht gleich „Bio“</h3>
+      <p>Der Begriff „Biokunststoff“ wird für zwei verschiedene Dinge verwendet:</p>
+      <ul>
+        <li><strong>biobasiert:</strong> ganz oder teilweise aus nachwachsenden Rohstoffen (z. B. Mais, Zuckerrohr, Kartoffeln) hergestellt,</li>
+        <li><strong>biologisch abbaubar:</strong> kann unter bestimmten Bedingungen von Mikroorganismen zu Kohlenstoffdioxid und Wasser abgebaut werden.</li>
+      </ul>
+      <p>Ordnet die Kunststoffe in die Vierfeldertafel ein und begründet: <strong>PE aus Erdöl</strong>, <strong>Bio-PE aus Zuckerrohr</strong>, <strong>PLA aus Maisstärke</strong>, <strong>PBAT</strong> (ein abbaubarer Polyester aus Erdöl, z. B. in Bioabfallbeuteln).</p>
+      <div class="matrix">
+        <div class="kopfzelle"></div><div class="kopfzelle">biologisch abbaubar</div><div class="kopfzelle">nicht biologisch abbaubar</div>
+        <div class="kopfzelle">biobasiert</div><div></div><div></div>
+        <div class="kopfzelle">fossil (Erdöl)</div><div></div><div></div>
+      </div>
+      <p class="heft">Vierfeldertafel mit Begründungen. Erklärt außerdem mit Thema 3, warum gerade Polyester oft abbaubar sind.</p>
+      <ul class="quellen">
+        <li class="text"><a href="https://www.umweltbundesamt.de/biobasierte-biologisch-abbaubare-kunststoffe" target="_blank" rel="noopener">Biobasierte und biologisch abbaubare Kunststoffe (FAQ)</a> <span class="quelle">· Umweltbundesamt</span></li>
+        <li class="text"><a href="https://www.leifichemie.de/produkte-der-organischen-chemie/einfuehrung-die-kunststoffe/grundwissen/geschichte-der-biokunststoffe" target="_blank" rel="noopener">Geschichte der Biokunststoffe</a> <span class="quelle">· LEIFIchemie</span></li>
+        <li class="video"><a href="https://planet-schule.de/schwerpunkt/frage-trifft-antwort/wie-wird-aus-kartoffeln-plastik-film-100.html" target="_blank" rel="noopener">Wie wird aus Kartoffeln Plastik? (Film)</a> <span class="quelle">· planet schule</span></li>
+      </ul>
+      <details class="loesung"><summary>Lösung zum Vergleichen</summary><div>
+        <ul>
+          <li><strong>biobasiert + abbaubar:</strong> PLA (unter industriellen Kompostierbedingungen)</li>
+          <li><strong>biobasiert + nicht abbaubar:</strong> Bio-PE – chemisch identisch mit PE aus Erdöl</li>
+          <li><strong>fossil + abbaubar:</strong> PBAT</li>
+          <li><strong>fossil + nicht abbaubar:</strong> PE aus Erdöl</li>
+        </ul>
+        <p>Die Abbaubarkeit hängt von der <strong>Struktur</strong> ab, nicht vom Rohstoff. Polyester enthalten Estergruppen, die durch Hydrolyse (auch mithilfe von Enzymen) gespalten werden können. Reine C–C-Ketten wie in PE bieten dafür keinen Angriffspunkt.</p>
+      </div></details>
+    </div>
+
+    <div class="box auftrag vertiefung">
+      <span class="label">Vertiefung · Bewertung</span>
+      <h3>A3 · Der Becher-Streit</h3>
+      <p><strong>Fiktives Szenario:</strong> Bei einem großen Stadtfest sollen alle Einwegbecher aus PS und PP durch Becher aus PLA ersetzt werden. Der Stadtrat will darüber entscheiden und hört Sachverständige an.</p>
+      <p>Jedes Gruppenmitglied übernimmt eine Rolle und bereitet <strong>zwei Argumente</strong> aus Sicht seiner Rolle vor (recherchiert!):</p>
+      <div class="rollen-karten">
+        <div><strong>🌱 Umweltamt</strong><br>ökologische Perspektive: Rohstoffe, Flächenverbrauch, Entsorgung, CO₂</div>
+        <div><strong>💶 Festveranstalter/in</strong><br>ökonomische Perspektive: Kosten, Verfügbarkeit, Image</div>
+        <div><strong>🧑‍🌾 Landwirtschaftsverband / Entwicklungsorganisation</strong><br>soziale Perspektive: Anbauflächen, Konkurrenz zu Nahrungsmitteln, Arbeitsplätze</div>
+      </div>
+      <p>Führt eure Argumente zusammen und trefft als Gruppe eine <strong>begründete Entscheidung</strong>. Vielleicht findet ihr auch eine dritte Lösung, an die der Stadtrat noch nicht gedacht hat.</p>
+      <p class="heft">Tabelle: Perspektive · Argument dafür · Argument dagegen. Darunter eure Entscheidung mit Begründung: Welche Kriterien waren euch am wichtigsten – und warum?</p>
+      <details class="hilfe"><summary>Hilfe: Fragen für die Recherche</summary><div>
+        <ul>
+          <li>Wo landen gebrauchte PLA-Becher tatsächlich? Werden sie in Kompostieranlagen angenommen?</li>
+          <li>Können PLA-Becher zusammen mit anderen Kunststoffen recycelt werden?</li>
+          <li>Was sagt das Umweltbundesamt dazu, ob biobasierte Kunststoffe nachhaltiger sind?</li>
+          <li>Gibt es Alternativen zu Einwegbechern überhaupt?</li>
+        </ul>
+      </div></details>
+    </div>
+
+    <div class="box auftrag vertiefung">
+      <span class="label">Vertiefung · 🤖 KI-Check</span>
+      <h3>A4 · Fragt die KI – und dann das Umweltbundesamt</h3>
+      <p>Stellt einer KI die Frage: „Sind Biokunststoffe besser für die Umwelt als herkömmliche Kunststoffe?“ Vergleicht die Antwort mit der FAQ des Umweltbundesamts. Wo stimmt sie überein, wo vereinfacht sie zu stark oder fehlt etwas?</p>
+      <p class="heft">Zwei Übereinstimmungen und eine Abweichung, jeweils mit Beleg aus der UBA-Seite.</p>
+    </div>
+
+    <div class="box auftrag challenge">
+      <span class="label">Challenge</span>
+      <h3>A5 · Chemie-Detektive: Echt bio?</h3>
+      <p>Bio-PE und Erdöl-PE sind chemisch identisch. Trotzdem lässt sich im Labor nachweisen, wie viel des Kohlenstoffs aus nachwachsenden Rohstoffen stammt.</p>
+      <p>Recherchiert, wie das mit dem Kohlenstoff-Isotop <strong>¹⁴C</strong> funktioniert, und erklärt das Prinzip in wenigen Sätzen. Warum enthält Erdöl praktisch kein ¹⁴C mehr?</p>
+      <details class="loesung"><summary>Lösung</summary><div>
+        <p>Pflanzen nehmen beim Wachsen CO₂ aus der Atmosphäre auf, das einen kleinen, ziemlich konstanten Anteil des radioaktiven Isotops ¹⁴C enthält. Ein biobasierter Kunststoff enthält deshalb ¹⁴C. ¹⁴C zerfällt mit einer Halbwertszeit von etwa 5 700 Jahren. Erdöl ist Millionen Jahre alt – sein ¹⁴C ist praktisch vollständig zerfallen. Aus dem gemessenen ¹⁴C-Anteil einer Probe lässt sich daher der biobasierte Anteil des Kohlenstoffs berechnen.</p>
+      </div></details>
+    </div>
+
+    <div class="box plenum">
+      <span class="label">Plenum</span>
+      <h3>Stadtratssitzung</h3>
+      <p>Wir spielen die Anhörung im Stadtrat: Aus jeder Rolle tragen einige Sachverständige ihre Argumente vor. Danach stellt sich der ganze Kurs auf einer <strong>Positionslinie</strong> auf (von „PLA-Becher: unbedingt!“ bis „auf keinen Fall!“). Einzelne begründen ihren Standpunkt – wer sich überzeugen lässt, darf den Platz wechseln.</p>
+      <p>Zum Abschluss: Schaut euch eure Bauchentscheidungen aus „Fake oder Fakt?“ noch einmal an. Was hat sich geändert?</p>
+    </div>
+
+    <div class="box ichkann">
+      <h3 style="margin-top:0">Ich kann …</h3>
+      <label><input type="checkbox" data-k="1"> den Weg vom Erdöl zum Kunststoff (Destillation, Cracken, Polymerisation) beschreiben.</label>
+      <label><input type="checkbox" data-k="2"> die Begriffe „biobasiert“ und „biologisch abbaubar“ unterscheiden und Beispiele nennen.</label>
+      <label><input type="checkbox" data-k="3"> begründen, warum die Abbaubarkeit von der Struktur und nicht vom Rohstoff abhängt.</label>
+      <label><input type="checkbox" data-k="4"> den Einsatz von Erdöl und nachwachsenden Rohstoffen aus ökologischer, ökonomischer und sozialer Perspektive bewerten.</label>
+    </div>
+
+    <div class="weiter"></div>
+  </main>
+
+  <footer>Unterrichtsmaterial Chemie Q2 · Patrick Hafner · <a href="../../impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></footer>
+  <script src="werkstoffe.js"></script>
+</body>
+</html>
