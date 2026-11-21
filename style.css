@@ -84,3 +84,10 @@ footer {
   font-size: .85rem;
   border-top: 1px solid var(--rand);
 }
+
+footer a { color: var(--grau); }
+header a.zurueck { color: #fff; }
+.text { max-width: 720px; }
+.text h2 { margin-top: 1.5rem; }
+.text a { color: var(--akzent); }
+.stand { color: var(--grau); font-size: .9rem; margin-top: 2rem; }
