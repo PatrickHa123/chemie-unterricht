@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wie viel steckt drin? | Saure und alkalische Lösungen · Chemie Jg. 10</title>
+  <link rel="stylesheet" href="labor.css">
+  <script src="labor.js" defer></script>
+</head>
+<body data-seite="6-titration.html">
+  <header class="kopf">
+    <div class="inhalt">
+      <p class="reihe"><a href="../../">Chemie-Unterricht</a> · Jahrgang 10 · <a href="index.html">Prüflabor pH</a></p>
+      <h1><span class="auftrag-nr">Auftrag 6</span>Wie viel steckt drin?</h1>
+      <p class="leitfrage">Wie bestimmt man, wie viel Säure in einem Lebensmittel steckt?</p>
+    </div>
+  </header>
+  <nav class="nav" aria-label="Aufträge der Reihe"></nav>
+  <main>
+    <div class="blatt kunde">
+      <div class="avatar" aria-hidden="true">🫙</div>
+      <div>
+        <p class="von">Neuer Auftrag · Kleine Essig-Manufaktur im Bergischen</p>
+        <blockquote>„Auf unseren Flaschen steht ‚5 % Säure‘. Die Lebensmittelkontrolle will das genau wissen, und unser Messgerät ist kaputt. Könnt ihr mit einfachen Mitteln bestimmen, wie viel Essigsäure wirklich in unserem Essig steckt?“</blockquote>
+      </div>
+    </div>
+
+    <div class="blatt ziel">
+      <strong>🎯 Nach diesem Auftrag kannst du …</strong>
+      <ul>
+        <li>das Prinzip einer Säure-Base-Titration erklären,</li>
+        <li>eine Titration planen, durchführen bzw. simulieren und auswerten,</li>
+        <li>aus dem Verbrauch an Maßlösung die Konzentration einer sauren Lösung berechnen.</li>
+      </ul>
+    </div>
+
+    <h2><span class="marke">Idee</span> Gegenspieler zählen</h2>
+    <div class="blatt">
+      <p style="margin-top:0">Aus Auftrag 5 wisst ihr: Ein OH⁻-Ion „verbraucht“ genau ein H₃O⁺-Ion. <strong>Denkaufgabe:</strong> Wie könnte man diese Tatsache nutzen, um herauszufinden, wie viele Säureteilchen in einer Probe sind? Sammelt Ideen im Team, bevor ihr weiterlest. <span class="heft">✏️ Heft</span></p>
+    </div>
+    <div class="aufgabe" data-nr="1">
+      <p class="typ">● Pflicht · Einzelarbeit</p>
+      <p><span class="op">Lies</span> „Titrationen durchführen“ <span class="buch">📘 S. 184–185</span> und die LEIFIchemie-Seite. Zeichne den Versuchsaufbau einer Titration und beschrifte: Bürette, Maßlösung, Erlenmeyerkolben, Probelösung, Indikator. <span class="heft">✏️ Heft</span></p>
+      <div class="extern">
+        <a href="https://www.leifichemie.de/analytische-methoden/titrationsverfahren/grundwissen/durchfuehrung-der-titration" target="_blank" rel="noopener"><span class="quelle">LEIFIchemie · Grundwissen</span><strong>Durchführung der Titration</strong><span class="wozu">Aufbau und Ablauf Schritt für Schritt</span></a>
+      </div>
+    </div>
+
+    <h2><span class="marke">Titrieren</span> Im Simulator</h2>
+    <div class="viz" data-viz="titration"></div>
+    <div class="aufgabe" data-nr="2">
+      <p class="typ">● Pflicht · Partnerarbeit</p>
+      <ol style="margin-top:0">
+        <li>Titriert die Essigprobe: zuerst grob in 1-mL-Schritten, bis der Indikator umschlägt. Dann <strong>neu starten</strong> und kurz vor dem Umschlag in 0,1-mL-Schritten weiter.</li>
+        <li>Notiert das Volumen der Natronlauge beim Farbumschlag. <span class="heft">✏️ Heft</span></li>
+        <li>Berechnet die Konzentration der Essigsäure in der Probe (Rechenweg unten) und prüft euer Ergebnis im Simulator.</li>
+        <li>Schaltet das pH-Meter ein und titriert noch einmal. <span class="op">Beschreibt</span> den Verlauf der Kurve: Wo ändert sich der pH-Wert kaum, wo sehr stark?</li>
+      </ol>
+    </div>
+
+    <div class="blatt">
+      <h3 style="margin-top:0">🧮 Rechenweg in drei Schritten</h3>
+      <p><em>Beispiel:</em> 10 mL Salzsäure werden mit Natronlauge (c = 0,1 mol/L) titriert. Verbrauch bis zum Farbumschlag: 8,0 mL.</p>
+      <div class="tabelle"><table>
+        <tr><th>Schritt</th><th>Rechnung</th></tr>
+        <tr><td>① Stoffmenge der zugegebenen OH⁻-Ionen</td><td>n(OH⁻) = c · V = 0,1 mol/L · 0,008 L = 0,0008 mol</td></tr>
+        <tr><td>② Am Äquivalenzpunkt gilt</td><td>n(Säure) = n(OH⁻) = 0,0008 mol</td></tr>
+        <tr><td>③ Konzentration der Säure</td><td>c(Säure) = n : V = 0,0008 mol : 0,010 L = <strong>0,08 mol/L</strong></td></tr>
+      </table></div>
+      <div class="hilfen">
+        <details class="tipp"><summary>Tipp: Einheiten-Falle</summary><div>Volumen immer in Liter umrechnen: 8,0 mL = 0,008 L; 10 mL = 0,010 L.</div></details>
+        <details class="tipp"><summary>Tipp: Gilt das für jede Säure?</summary><div>Für Salzsäure und Essigsäure ja: Jedes Säuremolekül gibt ein Proton ab. Bei Schwefelsäure (zwei Protonen) bräuchte man doppelt so viel Natronlauge.</div></details>
+      </div>
+    </div>
+
+    <h2><span class="marke">Untersuchen</span> Echte Proben</h2>
+    <div class="aufgabe" data-nr="3">
+      <p class="typ">● Pflicht · Laborteam</p>
+      <p>Bestimmt die Säurekonzentration einer echten Probe – mit Bürette oder Spritze, nach dem Praktikum „Titration“ <span class="buch">📘 S. 185</span> bzw. „Milchsäure in Joghurt“ <span class="buch">📘 S. 187</span> und nach Anweisung eurer Lehrkraft. Ohne eigene Messung nutzt ihr die Messwerte, die eure Lehrkraft ausgibt.</p>
+      <p>Schreibt einen <strong>Prüfbericht</strong> an die Essig-Manufaktur: Ziel · Durchführung (kurz) · Messwerte · Rechnung · Ergebnis · Fehlerquellen. <span class="heft">✏️ Heft</span></p>
+    </div>
+    <div class="aufgabe wahl" data-nr="4">
+      <p class="typ">◆ Wahl</p>
+      <p>Bearbeitet Material A „Titration“ <span class="buch">📘 S. 186</span> oder die Aufgaben zur Methode „Bestimmung von Konzentration und Massenanteil“ <span class="buch">📘 S. 187</span>.</p>
+    </div>
+    <div class="aufgabe profi" data-nr="5">
+      <p class="typ">★ Profi: Stimmen die 5 %?</p>
+      <p>Eine Titration ergibt für <em>unverdünnten</em> Essig c(Essigsäure) = 0,85 mol/L. Essigsäure hat die molare Masse M = 60 g/mol. <span class="op">Berechne</span>, wie viel Gramm Essigsäure in 1 L Essig sind, und <span class="op">beurteile</span> die Angabe „5 % Säure“ (1 L Essig wiegt etwa 1000 g).</p>
+      <details class="loesung"><summary>Lösung</summary><div><p>m = n · M = 0,85 mol · 60 g/mol = 51 g pro Liter. 51 g von 1000 g sind 5,1 %. Die Angabe stimmt.</p></div></details>
+    </div>
+
+    <div class="frage" data-richtig="0" data-ja="Genau. Der Indikator zeigt den Punkt an, an dem alle Säureteilchen „verbraucht“ sind.">
+      <p>Kurz-Check: Was zeigt der Farbumschlag des Indikators bei der Titration an?</p>
+      <div class="optionen">
+        <button>Es wurden so viele OH⁻-Ionen zugegeben, wie Säureteilchen in der Probe waren.</button>
+        <button data-tipp="Der Indikator ändert seine Farbe bei einem bestimmten pH-Wert – nicht, weil die Bürette leer ist.">Die Natronlauge in der Bürette ist aufgebraucht.</button>
+        <button data-tipp="Überleg: Wo kommt die Säure hin? Sie reagiert mit der Natronlauge.">Die Säure ist verdunstet.</button>
+      </div>
+      <p class="rueck" aria-live="polite"></p>
+    </div>
+
+    <div class="stempel" data-auftrag="6">
+      <h3>🔖 Prüfsiegel 6: Ich kann …</h3>
+      <div class="ichkann">
+        <label><input type="checkbox"> <span>den Aufbau einer Titration zeichnen und beschriften.</span></label>
+        <label><input type="checkbox"> <span>das Prinzip der Titration mit der Neutralisation erklären.</span></label>
+        <label><input type="checkbox"> <span>aus dem Verbrauch an Natronlauge die Konzentration einer Säure berechnen.</span></label>
+        <label><input type="checkbox"> <span>einen Prüfbericht mit Fehlerquellen schreiben.</span></label>
+      </div>
+      <button class="knopf voll siegel" type="button">Prüfsiegel holen</button>
+      <p class="siegel-info rueck" aria-live="polite"></p>
+      <p class="erteilt">✔ GEPRÜFT · AUFTRAG 6</p>
+    </div>
+
+<div class="weiter"><a href="5-neutralisation.html">← Auftrag 5: Gegenspieler</a><a href="7-risiko.html">Auftrag 7: Risiko oder Nutzen? →</a></div>
+  </main>
+  <footer class="fuss"><div class="inhalt">Patrick Hafner · Kaiserin-Augusta-Schule Köln · <a href="../../impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a><br>Grafiken und Animationen: eigene Darstellungen. Simulationen: PhET Interactive Simulations, University of Colorado Boulder (CC BY 4.0), nur nach Klick geladen.</div></footer>
+</body>
+</html>

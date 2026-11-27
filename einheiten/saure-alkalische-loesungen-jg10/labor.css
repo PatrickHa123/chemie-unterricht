@@ -1,0 +1,264 @@
+/* Prüflabor pH – Saure und alkalische Lösungen (Jg. 10)
+   Gestaltung: „Laborbuch“ – Karopapier, Tinte, Indikatorfarben */
+:root{
+  --papier:#f8f6ef;
+  --karo:#e6e1d3;
+  --tinte:#1f2a37;
+  --tinte-hell:#4b5563;
+  --linie:#d6cfbd;
+  --weiss:#fffdf8;
+  --akzent:#0f766e;       /* Laborgrün */
+  --akzent-dunkel:#0b524c;
+  --sauer:#c2410c;  --sauer-hell:#fde7dc;
+  --neutral:#3f8f3a; --neutral-hell:#e3f1df;
+  --alk:#4338ca;    --alk-hell:#e5e4fb;
+  --pflicht:#0f766e; --wahl:#9a6700; --profi:#7e22ce;
+  --warn:#b91c1c;
+  --radius:10px;
+  --schatten:0 1px 0 var(--linie), 0 6px 18px rgba(31,42,55,.06);
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;color:var(--tinte);font-size:17px;line-height:1.6;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background-color:var(--papier);
+  background-image:
+    linear-gradient(var(--karo) 1px,transparent 1px),
+    linear-gradient(90deg,var(--karo) 1px,transparent 1px);
+  background-size:24px 24px;
+}
+a{color:var(--akzent-dunkel)}
+img,svg{max-width:100%}
+:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
+
+/* Kopf mit Indikatorstreifen */
+.kopf{background:var(--tinte);color:#fff;position:relative;padding:22px 18px 30px}
+.kopf::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;
+  background:linear-gradient(90deg,#d7263d,#f06a2a,#f7c325,#a9cf3c,#4caf50,#2a9d8f,#2b7bb9,#3557a8,#5e2d91,#5a1a6e)}
+.kopf .inhalt,main,.fuss .inhalt{max-width:980px;margin:0 auto}
+.kopf .reihe{margin:0;font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
+.kopf .reihe a{color:#fff}
+.kopf h1{margin:.25em 0 .2em;font-size:clamp(1.6rem,4.5vw,2.4rem);line-height:1.15}
+.kopf .leitfrage{margin:0;font-size:1.05rem;opacity:.92;max-width:46em}
+.auftrag-nr{display:inline-block;font-family:var(--mono);background:#fff;color:var(--tinte);border-radius:4px;padding:1px 8px;font-size:.85rem;margin-right:6px}
+
+/* Navigation */
+.nav{background:var(--weiss);border-bottom:1px solid var(--linie);position:sticky;top:0;z-index:20}
+.nav ul{list-style:none;margin:0 auto;padding:6px 10px;display:flex;gap:4px;overflow-x:auto;max-width:980px;scrollbar-width:thin}
+.nav a{display:flex;align-items:center;gap:6px;white-space:nowrap;text-decoration:none;color:var(--tinte);
+  padding:6px 10px;border-radius:6px;font-size:.92rem;border:1px solid transparent}
+.nav a:hover{background:var(--papier)}
+.nav a[aria-current="page"]{border-color:var(--tinte);font-weight:600}
+.nav .punkt{width:12px;height:12px;border-radius:3px;border:1.5px solid var(--tinte-hell);flex:none}
+.nav .punkt.fertig{border-color:transparent}
+
+main{padding:18px 16px 60px}
+h2{font-size:1.45rem;margin:2.2em 0 .6em;display:flex;align-items:center;gap:10px}
+h2 .marke{font-family:var(--mono);font-size:.8rem;background:var(--tinte);color:#fff;border-radius:4px;padding:2px 8px;font-weight:500}
+h3{font-size:1.12rem;margin:1.3em 0 .4em}
+
+/* Karten */
+.blatt{background:var(--weiss);border:1px solid var(--linie);border-radius:var(--radius);padding:18px 20px;margin:14px 0;box-shadow:var(--schatten);position:relative}
+.blatt>:first-child{margin-top:0}
+.blatt>:last-child{margin-bottom:0}
+.kunde{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;border-left:6px solid var(--sauer)}
+.kunde .avatar{font-size:2.4rem;line-height:1}
+.kunde .von{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--tinte-hell);margin:0}
+.kunde blockquote{margin:.3em 0 0;font-size:1.02rem}
+.kunde.alk{border-left-color:var(--alk)} .kunde.neu{border-left-color:var(--neutral)}
+
+.ziel{border-left:6px solid var(--tinte)}
+.ziel ul{margin:.3em 0 0;padding-left:1.2em}
+
+/* Aufgaben */
+.aufgabe{background:var(--weiss);border:1px solid var(--linie);border-radius:var(--radius);padding:16px 18px 16px 62px;margin:14px 0;position:relative;box-shadow:var(--schatten)}
+.aufgabe::before{content:attr(data-nr);position:absolute;left:14px;top:14px;width:34px;height:34px;border-radius:50%;
+  display:grid;place-items:center;font-weight:700;color:#fff;background:var(--pflicht);font-family:var(--mono)}
+.aufgabe.wahl::before{background:var(--wahl)} .aufgabe.profi::before{background:var(--profi)}
+.aufgabe .typ{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--pflicht);margin:0 0 2px}
+.aufgabe.wahl .typ{color:var(--wahl)} .aufgabe.profi .typ{color:var(--profi)}
+.aufgabe>p:first-of-type{margin-top:0}
+.op{font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:#f59e0b}
+.heft{display:inline-flex;align-items:center;gap:4px;font-size:.82rem;font-family:var(--mono);background:#fef3c7;border:1px solid #f2d77f;border-radius:4px;padding:0 6px;white-space:nowrap}
+.buch{display:inline-flex;align-items:center;gap:4px;font-size:.85rem;background:#e0f2fe;border:1px solid #9cd3f5;border-radius:4px;padding:0 6px;white-space:nowrap}
+.legende{display:flex;flex-wrap:wrap;gap:8px;margin:.6em 0}
+.legende span{border-radius:6px;padding:4px 10px;font-size:.9rem;border:1px solid var(--linie);background:var(--weiss)}
+.legende b.p{color:var(--pflicht)} .legende b.w{color:var(--wahl)} .legende b.x{color:var(--profi)}
+
+/* Wahlbrett */
+.wahlbrett{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:12px 0}
+.wahlbrett .feld{background:var(--weiss);border:2px dashed var(--wahl);border-radius:var(--radius);padding:14px}
+.wahlbrett .feld h4{margin:0 0 .3em;font-size:1rem}
+.wahlbrett .feld p{margin:.3em 0;font-size:.95rem}
+
+/* Tippkarten & Lösungen */
+.hilfen{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+details.tipp,details.loesung{border-radius:8px;border:1px solid var(--linie);background:var(--papier);flex:1 1 220px;min-width:0}
+details.tipp>summary,details.loesung>summary{cursor:pointer;padding:8px 12px;font-weight:600;font-size:.93rem;list-style:none;display:flex;align-items:center;gap:8px}
+details>summary::-webkit-details-marker{display:none}
+details.tipp>summary::before{content:"🃏"}
+details.loesung>summary::before{content:"🔒"}
+details.loesung[open]>summary::before{content:"🔓"}
+details.tipp>div,details.loesung>div{padding:0 12px 10px;font-size:.95rem}
+details.loesung{flex-basis:100%;background:#f0fdf4;border-color:#b7e2c3}
+.sperre{font-size:.88rem;color:var(--tinte-hell);padding:0 12px 10px}
+.sperre label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+
+/* Formulierungshilfen */
+.satz{background:#fff7ed;border:1px dashed #f0b27a;border-radius:8px;padding:8px 12px;font-size:.93rem;margin-top:8px}
+.satz b{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;color:#9a3412;display:block}
+
+/* Infobox, Merke, Warnung */
+.merke{background:#ecfdf5;border:2px solid var(--akzent);border-radius:var(--radius);padding:14px 18px;margin:16px 0}
+.merke::before{content:"MERKE · INS HEFT";display:block;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--akzent-dunkel);margin-bottom:4px}
+.achtung{background:#fef2f2;border-left:6px solid var(--warn);border-radius:6px;padding:10px 14px;margin:14px 0}
+.ki{background:#f5f3ff;border-left:6px solid var(--profi);border-radius:6px;padding:12px 16px;margin:14px 0}
+.ki::before{content:"🤖 KI-CHECK";display:block;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;color:var(--profi);margin-bottom:4px}
+.methode{border:2px solid var(--tinte);border-radius:var(--radius);background:var(--weiss);padding:14px 18px;margin:16px 0}
+.methode .kopfzeile{display:flex;gap:10px;align-items:center;font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.methode .kopfzeile span{background:var(--tinte);color:#fff;border-radius:4px;padding:2px 8px}
+.methode ol{margin:.3em 0;padding-left:1.3em}
+
+/* Gleichungen */
+.gl{font-family:"Cambria Math","STIX Two Math","Times New Roman",serif;font-size:1.08rem;background:var(--papier);border-radius:6px;padding:8px 12px;margin:8px 0;overflow-x:auto;white-space:nowrap}
+
+/* Tabellen */
+.tabelle{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;background:var(--weiss);font-size:.95rem}
+th,td{border:1px solid var(--linie);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:#efeadc}
+
+/* Visualisierungen */
+.viz{background:var(--weiss);border:1px solid var(--linie);border-radius:var(--radius);padding:14px;margin:14px 0;box-shadow:var(--schatten)}
+.viz .titel{font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--tinte-hell);margin:0 0 8px}
+.viz svg{display:block;width:100%;height:auto}
+.viz .steuer{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+.viz .text{min-height:3.2em;margin:8px 0 0;font-size:.96rem}
+.knopf{font:inherit;font-size:.95rem;border:1.5px solid var(--tinte);background:var(--weiss);color:var(--tinte);border-radius:8px;padding:7px 14px;cursor:pointer;min-height:40px}
+.knopf:hover{background:var(--papier)}
+.knopf.voll{background:var(--tinte);color:#fff}
+.knopf.voll:hover{background:#111827}
+.knopf:disabled{opacity:.45;cursor:not-allowed}
+input[type=range]{width:100%;accent-color:var(--akzent);min-height:32px}
+
+/* PhET-Zwei-Klick */
+.sim{border:2px solid #2b7bb9;border-radius:var(--radius);background:#f0f7fd;margin:16px 0;overflow:hidden}
+.sim .simkopf{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:10px 14px;background:#dbeefc}
+.sim .simkopf strong{font-size:1rem}
+.sim .simkopf small{font-family:var(--mono);font-size:.75rem;color:#1e4f7a}
+.sim .platz{padding:14px;font-size:.92rem}
+.sim iframe{width:100%;aspect-ratio:16/10.5;border:0;display:block;background:#fff}
+.sim .auftrag{padding:12px 14px;border-top:1px solid #b7d8f2;background:var(--weiss)}
+.sim .auftrag ol{margin:.2em 0;padding-left:1.3em}
+
+/* Externe Links */
+.extern{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin:12px 0}
+.extern a{display:block;text-decoration:none;color:var(--tinte);background:var(--weiss);border:1px solid var(--linie);border-radius:var(--radius);padding:12px 14px;box-shadow:var(--schatten)}
+.extern a:hover{border-color:var(--tinte)}
+.extern .quelle{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--tinte-hell)}
+.extern strong{display:block;margin:2px 0}
+.extern span.wozu{font-size:.9rem;color:var(--tinte-hell)}
+
+/* Sortier- und Quizbausteine */
+.sortier{display:grid;gap:8px}
+.sortier .zeile{display:grid;grid-template-columns:1fr minmax(150px,auto);gap:10px;align-items:center;background:var(--papier);border-radius:8px;padding:6px 10px}
+.sortier select{font:inherit;font-size:.95rem;padding:6px;border-radius:6px;border:1px solid var(--linie);background:#fff;min-height:40px}
+.sortier .zeile.ok{background:#dcfce7} .sortier .zeile.nein{background:#fee2e2}
+.frage{margin:14px 0}
+.frage p{margin:.2em 0 .5em;font-weight:600}
+.optionen{display:grid;gap:6px}
+.optionen button{font:inherit;text-align:left;border:1.5px solid var(--linie);background:#fff;border-radius:8px;padding:8px 12px;cursor:pointer;min-height:42px}
+.optionen button:hover{border-color:var(--tinte)}
+.optionen button.ok{background:#dcfce7;border-color:#22a05a}
+.optionen button.nein{background:#fee2e2;border-color:#e05353}
+.rueck{font-size:.93rem;margin-top:6px;min-height:1.2em}
+
+/* Cartoon */
+.cartoon{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.blase{background:#fff;border:2px solid var(--tinte);border-radius:18px;padding:12px 14px;position:relative}
+.blase .wer{font-size:1.6rem;position:absolute;right:10px;top:-18px;background:var(--papier);border-radius:50%;padding:2px 4px}
+.blase p{margin:0 0 8px;font-style:italic}
+.blase .wahl3{display:flex;gap:6px;flex-wrap:wrap}
+.blase .wahl3 button{font:inherit;font-size:.85rem;border:1.5px solid var(--linie);background:var(--papier);border-radius:20px;padding:4px 10px;cursor:pointer;min-height:34px}
+.blase .wahl3 button[aria-pressed="true"]{background:var(--tinte);color:#fff;border-color:var(--tinte)}
+
+/* Laborausweis / Stempel */
+.ausweis{background:var(--weiss);border:2px solid var(--tinte);border-radius:14px;padding:16px;margin:16px 0}
+.ausweis .streifen{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin:10px 0}
+.ausweis .feld{aspect-ratio:1/1.5;border-radius:4px;border:1.5px dashed var(--tinte-hell);display:grid;place-items:center;font-family:var(--mono);font-size:.8rem;color:var(--tinte-hell);transition:background .5s}
+.ausweis .feld.fertig{border-style:solid;border-color:transparent;color:#fff;font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,.4)}
+.stempel{border:2px solid var(--akzent);border-radius:var(--radius);background:#f0fdfa;padding:16px;margin:24px 0}
+.stempel h3{margin-top:0}
+.stempel .ichkann label{display:grid;grid-template-columns:auto 1fr;gap:8px;padding:5px 0;cursor:pointer}
+.stempel .erteilt{display:none;font-family:var(--mono);color:var(--akzent-dunkel);font-weight:700;border:3px double var(--akzent);border-radius:8px;padding:6px 12px;transform:rotate(-3deg);width:max-content;margin-top:10px}
+.stempel.fertig .erteilt{display:block}
+
+/* Kompetenzraster */
+.raster td.stufe{text-align:center}
+.raster input{width:20px;height:20px}
+
+/* Glossar */
+.glossar-knopf{position:fixed;right:14px;bottom:14px;z-index:30;border-radius:24px;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.glossar{position:fixed;inset:0 0 0 auto;width:min(420px,100%);background:var(--weiss);z-index:40;box-shadow:-6px 0 24px rgba(0,0,0,.2);transform:translateX(105%);transition:transform .25s;display:flex;flex-direction:column}
+.glossar.offen{transform:none}
+.glossar header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--linie)}
+.glossar .liste{overflow:auto;padding:8px 16px 30px}
+.glossar dt{font-weight:700;margin-top:10px}
+.glossar dd{margin:2px 0 0}
+.glossar input{font:inherit;width:100%;padding:8px;border:1px solid var(--linie);border-radius:6px;margin:8px 0}
+dfn{font-style:normal;border-bottom:2px dotted var(--akzent);cursor:help}
+
+/* Escape */
+.schloss{border:2px solid var(--tinte);border-radius:var(--radius);background:var(--weiss);padding:16px;margin:16px 0;position:relative}
+.schloss .status{position:absolute;right:14px;top:12px;font-size:1.6rem}
+.schloss.offen{border-color:#22a05a;background:#f0fdf4}
+.code{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.code input{font:inherit;font-family:var(--mono);font-size:1.1rem;width:9em;padding:8px;border:2px solid var(--tinte);border-radius:8px;text-transform:uppercase}
+.tresor{text-align:center;padding:30px 16px;border-radius:var(--radius);background:var(--tinte);color:#fff}
+.tresor .gross{font-size:3rem}
+
+/* Fuß */
+.fuss{background:var(--tinte);color:#d1d5db;padding:18px;font-size:.88rem}
+.fuss a{color:#fff}
+.weiter{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:30px}
+.weiter a{text-decoration:none;background:var(--weiss);border:1.5px solid var(--tinte);color:var(--tinte);border-radius:8px;padding:10px 16px;font-weight:600}
+
+/* Startseite */
+.trakte{display:grid;gap:14px}
+.trakt{background:var(--weiss);border:1px solid var(--linie);border-radius:var(--radius);overflow:hidden;box-shadow:var(--schatten)}
+.trakt .tkopf{padding:10px 16px;color:#fff;font-weight:700;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.trakt .tkopf small{font-weight:400;opacity:.9}
+.trakt .karten{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.trakt a.karte{display:block;text-decoration:none;color:var(--tinte);padding:14px 16px;border-top:1px solid var(--linie);border-right:1px solid var(--linie)}
+.trakt a.karte:hover{background:var(--papier)}
+.trakt a.karte .nr{font-family:var(--mono);font-size:.78rem;color:var(--tinte-hell)}
+.trakt a.karte h3{margin:.1em 0 .2em;font-size:1.05rem}
+.trakt a.karte p{margin:0;font-size:.92rem;color:var(--tinte-hell)}
+.trakt a.karte .fertig-marke{float:right;font-size:1.1rem}
+.rollen{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.rollen div{background:var(--papier);border-radius:8px;padding:10px 12px;font-size:.94rem}
+
+/* Lehrerversion */
+.lk .exp{background:#fff7ed;border:2px solid #ea580c;border-radius:8px;padding:10px 14px;margin:10px 0}
+.lk .exp::before{content:"🧪 OPTIONALES EXPERIMENT";display:block;font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;color:#c2410c;font-weight:700;margin-bottom:4px}
+.lk .ehz{background:#f0fdf4;border-left:5px solid #22a05a;padding:8px 12px;border-radius:6px;margin:8px 0}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  .aufgabe{padding-left:16px;padding-top:54px}
+  .aufgabe::before{top:12px}
+  .kunde{grid-template-columns:1fr}
+  .sortier .zeile{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media print{
+  .nav,.glossar-knopf,.glossar,.sim iframe,.steuer{display:none!important}
+  body{background:#fff}
+  details{display:block} details>div{display:block!important}
+}
+.viz select,.code label{max-width:100%}
+.viz select{width:100%}
+code{word-break:break-all}
+.code input{max-width:100%}
